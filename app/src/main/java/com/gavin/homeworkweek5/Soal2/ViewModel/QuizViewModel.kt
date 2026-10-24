@@ -11,11 +11,9 @@ import com.gavin.homeworkweek5.Soal2.model.AnsweredQuestion
 import com.gavin.homeworkweek5.Soal2.model.Question
 
 class QuizViewModel : ViewModel() {
-
     private val allQuestions = QuestionData.questions
     val totalAvailableQuestions: Int get() = allQuestions.size
 
-    // Bonus: halaman start untuk memilih jumlah soal
     var questionCountInput by mutableStateOf("3")
         private set
     var questionCountError by mutableStateOf<String?>(null)
@@ -23,7 +21,6 @@ class QuizViewModel : ViewModel() {
 
     private var questionCount = 3
 
-    // State quiz
     var quizQuestions by mutableStateOf<List<Question>>(emptyList())
         private set
     var currentIndex by mutableIntStateOf(0)
@@ -46,11 +43,9 @@ class QuizViewModel : ViewModel() {
         questionCountError = null
     }
 
-    // Mengembalikan true kalau jumlah soal valid dan quiz siap dimulai
     fun startQuiz(): Boolean {
         val count = questionCountInput.toIntOrNull() ?: 0
 
-        // Bonus: error handling jumlah soal
         if (count < 1) {
             questionCountError = "Number of questions must be at least 1"
             return false
@@ -69,9 +64,7 @@ class QuizViewModel : ViewModel() {
         selectedAnswer = answer
     }
 
-    // Mengembalikan true kalau soal terakhir sudah dijawab (pindah ke Result)
     fun nextQuestion(): Boolean {
-        // Cegah jawaban tercatat dua kali kalau Next di soal terakhir ditekan berulang
         if (isQuizFinished) return false
 
         val question = currentQuestion ?: return false
@@ -89,7 +82,6 @@ class QuizViewModel : ViewModel() {
         return false
     }
 
-    // Restart quiz dengan soal yang di random ulang
     fun restartQuiz() {
         generateQuiz()
     }

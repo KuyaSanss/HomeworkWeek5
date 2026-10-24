@@ -19,8 +19,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             HomeworkWeek5Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    // Soal 1: aktifkan AppNavHost, Soal 2: aktifkan QuizNavHost
-                    // AppNavHost(modifier = Modifier.padding(innerPadding))
                     QuizNavHost(modifier = Modifier.padding(innerPadding))
                 }
             }

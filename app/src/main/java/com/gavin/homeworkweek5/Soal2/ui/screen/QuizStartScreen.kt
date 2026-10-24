@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import com.gavin.homeworkweek5.Soal1.ui.theme.HomeworkWeek5Theme
 import com.gavin.homeworkweek5.Soal2.ViewModel.QuizViewModel
 
-// Bonus: halaman start untuk memilih jumlah soal
 @Composable
 fun QuizStartScreen(
     viewModel: QuizViewModel,

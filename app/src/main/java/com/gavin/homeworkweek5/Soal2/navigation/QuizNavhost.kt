@@ -18,7 +18,7 @@ import com.gavin.homeworkweek5.Soal2.ui.screen.QuizStartScreen
 fun QuizNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    quizViewModel: QuizViewModel = viewModel()   // satu ViewModel dipakai bersama oleh semua screen quiz
+    quizViewModel: QuizViewModel = viewModel()
 ) {
     NavHost(
         navController = navController,
@@ -55,7 +55,6 @@ fun QuizNavHost(
     }
 }
 
-// Preview alur lengkap (Start -> Quiz -> Result). Gunakan Interactive Mode untuk mencobanya.
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun QuizNavHostPreview() {

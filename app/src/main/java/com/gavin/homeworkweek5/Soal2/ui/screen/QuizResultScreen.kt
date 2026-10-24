@@ -41,7 +41,6 @@ fun QuizResultScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Tampilkan soal yang salah, jawaban salah, dan jawaban benar
         if (wrongAnswers.isEmpty()) {
             Text(
                 text = "Perfect! No wrong answers.",

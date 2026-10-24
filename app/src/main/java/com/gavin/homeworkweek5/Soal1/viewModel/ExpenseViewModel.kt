@@ -8,17 +8,13 @@ import androidx.lifecycle.ViewModel
 import com.gavin.homeworkweek5.Soal1.model.Expense
 
 class ExpenseViewModel : ViewModel() {
-
     private var nextId = 1
 
-    // Daftar expense
     private val _expenses = mutableStateListOf<Expense>()
     val expenses: List<Expense> get() = _expenses
 
-    // Total selalu dihitung dari daftar expense, jadi otomatis update saat tambah/hapus/edit
     val totalExpense: Long get() = _expenses.sumOf { it.amount }
 
-    // State input form
     var nameInput by mutableStateOf("")
         private set
     var amountInput by mutableStateOf("")
@@ -38,7 +34,6 @@ class ExpenseViewModel : ViewModel() {
     fun addExpense() {
         val amount = amountInput.toLongOrNull() ?: 0L
 
-        // Error handling: amount tidak boleh 0
         if (amount <= 0L) {
             amountError = "Amount must be greater than 0"
             return
@@ -54,7 +49,6 @@ class ExpenseViewModel : ViewModel() {
         _expenses.remove(expense)
     }
 
-    // Bonus: edit amount
     var editingExpense by mutableStateOf<Expense?>(null)
         private set
     var editAmountError by mutableStateOf<String?>(null)

@@ -53,7 +53,6 @@ fun QuizScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Next hanya bisa ditekan kalau sudah memilih jawaban
         Button(
             onClick = { if (viewModel.nextQuestion()) onQuizFinished() },
             enabled = viewModel.selectedAnswer != null && !viewModel.isQuizFinished,
@@ -67,7 +66,6 @@ fun QuizScreen(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun QuizScreenPreview() {
-    // Preview tidak punya NavHost, jadi setelah soal terakhir langsung tampilkan Result di sini
     val viewModel = remember { QuizViewModel().apply { startQuiz() } }
 
     HomeworkWeek5Theme {

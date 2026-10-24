@@ -129,7 +129,6 @@ fun ExpenseItem(
         )
     ) {
         if (isEditing) {
-            // Bonus: mode edit, amount diedit langsung di dalam kartu
             var editAmountInput by remember(expense.id) { mutableStateOf(expense.amount.toString()) }
 
             Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {

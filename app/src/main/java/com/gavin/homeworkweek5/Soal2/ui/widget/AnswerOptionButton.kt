@@ -20,7 +20,6 @@ fun AnswerOptionButton(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
-            // Biru tua kalau dipilih, biru muda kalau belum
             containerColor = if (isSelected) MaterialTheme.colorScheme.primary
             else MaterialTheme.colorScheme.primaryContainer,
             contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimary
